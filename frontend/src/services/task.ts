@@ -4,7 +4,9 @@
  * Handles all task-related API calls to the backend.
  */
 
-const API_URL = 'http://localhost:7689/api';
+const API_URL = process.env.NEXT_PUBLIC_API_URL
+  ? `${process.env.NEXT_PUBLIC_API_URL}/api`
+  : 'http://localhost:7689/api';
 
 export interface Task {
   id: string;

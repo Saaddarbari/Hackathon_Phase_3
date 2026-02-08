@@ -45,7 +45,10 @@ export default function ChatbotSidebar({ userId, tasks, onTaskAction, onTasksCha
   const initializeConversation = async () => {
     try {
       const token = localStorage.getItem('access_token');
-      const response = await fetch(`http://localhost:7689/api/${userId}/chat`, {
+      const API_URL = process.env.NEXT_PUBLIC_API_URL
+        ? `${process.env.NEXT_PUBLIC_API_URL}/api`
+        : 'http://localhost:7689/api';
+      const response = await fetch(`${API_URL}/${userId}/chat`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -97,11 +100,14 @@ export default function ChatbotSidebar({ userId, tasks, onTaskAction, onTasksCha
 
     try {
       const token = localStorage.getItem('access_token');
+      const API_URL = process.env.NEXT_PUBLIC_API_URL
+        ? `${process.env.NEXT_PUBLIC_API_URL}/api`
+        : 'http://localhost:7689/api';
 
       // Include current tasks in context
       const contextMessage = `${inputMessage}\n\nCurrent tasks: ${JSON.stringify(tasks.map(t => ({ id: t.id, title: t.title, completed: t.completed })))}`;
 
-      const response = await fetch(`http://localhost:7689/api/${userId}/chat`, {
+      const response = await fetch(`${API_URL}/${userId}/chat`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

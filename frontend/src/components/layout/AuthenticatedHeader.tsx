@@ -20,7 +20,10 @@ export default function AuthenticatedHeader({ userEmail }: AuthenticatedHeaderPr
 
   const handleSignOut = async () => {
     try {
-      await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/signout`, {
+      const API_URL = process.env.NEXT_PUBLIC_API_URL
+        ? `${process.env.NEXT_PUBLIC_API_URL}/api`
+        : 'http://localhost:7689/api';
+      await fetch(`${API_URL}/auth/signout`, {
         method: 'POST',
         credentials: 'include',
       });
