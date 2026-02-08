@@ -8,15 +8,15 @@ from src.config.settings import settings
 from src.api.routes import auth, todos
 
 app = FastAPI(
-    title="Evolution of Todo API",
-    description="Phase II - Full-stack todo application",
+    title="AI CHATBOT TODOAPP",
+    description="Phase II - AI todo application",
     version="0.1.0",
 )
 
 # CORS middleware configured for frontend origin
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://frontend:3000","https://todoapp-by-saad.vercel.app/"],  # Frontend container name in Docker Compose
+    allow_origins=["http://localhost:3000", "http://frontend:3000", "https://ai-chatbot-todoappbysaad.vercel.app"],  # Frontend container name in Docker Compose
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
