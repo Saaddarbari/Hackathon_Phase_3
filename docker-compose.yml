@@ -13,7 +13,8 @@ services:
   backend:
     build: ./backend
     ports:
-      - "8000:8000"
+      - "${PORT:-7689}:${PORT:-7689}"
     environment:
       - DATABASE_URL=${DATABASE_URL:-postgresql://neondb_owner:npg_8BwOyAhp2Jiv@ep-proud-shadow-aixv7sb2-pooler.c-4.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require}
       - JWT_SECRET=${JWT_SECRET:-change-this-secret-in-production}
+      - PORT=${PORT:-7689}

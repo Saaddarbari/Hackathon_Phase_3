@@ -3,8 +3,8 @@ import './globals.css'
 import Header from '@/components/layout/Header'
 
 export const metadata: Metadata = {
-  title: 'TODO APP',
-  description: 'Hackathon Phase II - Full-stack todo application',
+  title: 'TODO APP - Phase III',
+  description: 'Phase III - Agent-first todo chatbot with natural language interface',
 }
 
 export default function RootLayout({

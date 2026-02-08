@@ -32,5 +32,6 @@ class User(SQLModel, table=True):
         description="Timestamp when user was last updated"
     )
 
-    # Relationship to todos (one-to-many)
+    # Relationships
     todos: list["Todo"] = Relationship(back_populates="user")
+    conversations: list["Conversation"] = Relationship(back_populates="user")

@@ -48,7 +48,7 @@ async def get_session() -> AsyncGenerator[AsyncSession, None]:
 async def init_db():
     """Initialize database (create all tables)."""
     from sqlmodel import SQLModel
-    from src.models import user, todo
+    from src.models import user, todo, conversation, message
 
     async with engine.begin() as conn:
         await conn.run_sync(SQLModel.metadata.create_all)

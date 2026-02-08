@@ -10,3 +10,4 @@ python-jose[cryptography]
 pydantic-settings
 asyncpg
 pydantic[email]
+cohere

@@ -2,7 +2,8 @@ from passlib.context import CryptContext
 from jose import JWTError, jwt
 from datetime import datetime, timedelta
 from typing import Optional
-from sqlmodel import Session, select
+from sqlmodel import select
+from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.exc import IntegrityError
 
 from src.models.user import User
@@ -43,7 +44,7 @@ def decode_token(token: str) -> dict:
         raise ValueError("Invalid token")
 
 
-async def register_user(session: Session, email: str, password: str) -> User:
+async def register_user(session: AsyncSession, email: str, password: str) -> User:
     """Register a new user.
 
     Args:
@@ -77,7 +78,7 @@ async def register_user(session: Session, email: str, password: str) -> User:
     return user
 
 
-async def authenticate_user(session: Session, email: str, password: str) -> Optional[User]:
+async def authenticate_user(session: AsyncSession, email: str, password: str) -> Optional[User]:
     """Authenticate a user with email and password.
 
     Args:

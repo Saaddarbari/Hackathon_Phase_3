@@ -12,8 +12,12 @@ class Settings(BaseSettings):
     jwt_secret: str = "dev-secret-key-change-in-production-12345"
     jwt_algorithm: str = "HS256"
 
+    # Cohere configuration
+    cohere_api_key: str = ""
+
     # API configuration
     api_prefix: str = "/api"
+    port: int = 8000
 
     # CORS configuration
     cors_origins: list[str] = ["http://localhost:3000"]

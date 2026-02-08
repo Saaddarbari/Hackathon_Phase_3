@@ -16,18 +16,18 @@ export default function Home() {
         <div className="mb-8 p-1 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  animate-gradient shadow-2xl">
           <div className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-950/90 text-xs font-bold text-white uppercase tracking-widest leading-none">
             <Sparkles className="w-3 h-3 text-indigo-400" />
-           Master Your Daily Grind
+            Phase III: Agent-First Architecture
           </div>
         </div>
 
         {/* Hero Title */}
-        <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-8"><span className='text-white'>Design Your Tasks</span>
+        <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-8"><span className='text-white'>Chat With Your</span>
           <br />
-          <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Into Milestones
+          <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">AI Todo Assistant
           </span>
         </h1>
         <p className="mx-auto mb-12 max-w-2xl text-center text-lg text-slate-400 font-medium sm:text-xl leading-relaxed">
-          From planning to execution, take control of your workflow and unlock your productivity potential.
+          Manage tasks through natural conversation. No forms, no clicks - just tell your AI assistant what you need to do.
         </p>
 
         {/* Call to Actions */}
@@ -51,9 +51,9 @@ export default function Home() {
         {/* Features Preview */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl px-4">
           {[
-            { icon: Zap, title: "Hyper-Fast", desc: "Built for speed, optimized for your flow." },
-            { icon: Shield, title: "Vault-Grade", desc: "Your tasks are secured with deep encryption." },
-            { icon: Layout, title: "Seamless", desc: "Intuitive layout that stays out of your way." }
+            { icon: Zap, title: "Natural Language", desc: "Just chat - no forms or complex interfaces needed." },
+            { icon: Shield, title: "Agent-Driven", desc: "AI interprets your intent and executes via MCP tools." },
+            { icon: Layout, title: "Stateless", desc: "Every request reconstructs context from database." }
           ].map((feature, i) => (
             <div key={i} className="group p-6 rounded-3xl bg-slate-900/40 border border-slate-800/50 backdrop-blur-sm hover:border-indigo-500/30 hover:bg-indigo-500/5 transition-all duration-300">
               <div className="mb-4 inline-flex p-3 rounded-2xl bg-slate-800 text-indigo-400 group-hover:bg-indigo-500 group-hover:text-white transition-colors duration-300">

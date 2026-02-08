@@ -47,6 +47,9 @@ async def signup(
         )
     except Exception as e:
         # Handle unexpected errors
+        import traceback
+        print(f"Signup error: {str(e)}")
+        print(traceback.format_exc())
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail="Failed to create user"
@@ -97,3 +100,17 @@ async def signout(current_user: Annotated[User, Depends(get_current_user)]):
     by discarding the token. This endpoint validates the token exists.
     """
     return {"message": "Successfully signed out"}
+
+
+@router.get("/me", response_model=UserResponse)
+async def get_me(current_user: Annotated[User, Depends(get_current_user)]):
+    """
+    Get current authenticated user information.
+
+    Returns the user profile based on the JWT token in the Authorization header.
+    """
+    return UserResponse(
+        id=current_user.id,
+        email=current_user.email,
+        created_at=current_user.created_at
+    )
